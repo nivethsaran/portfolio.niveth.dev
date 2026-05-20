@@ -1,0 +1,87 @@
+---
+title: gRPC Python HelloWorld
+date: '2023-06-15'
+tags: [Python, gRPC, RPC]
+draft: false
+summary: A simple implementation of gRPC server and client in Python with HelloWorld example
+images: []
+layout: PostSimple
+---
+
+## Overview
+
+gRPC is a high-performance RPC framework using HTTP/2 that allows services to communicate efficiently over the network. This example shows how to implement a basic client-server HelloWorld service in Python.
+
+## What's Happening
+
+**Server**: Creates a gRPC server that listens on port 50051. The `Greeter` class implements the `SayHello` RPC method, which takes a name as input and returns a formatted greeting message.
+
+**Client**: Establishes an insecure channel to the server at localhost:50051, creates a stub to call the remote service, and invokes the `SayHello` method with a name parameter to receive the response.
+
+## Prerequisites
+
+- Python 3.6 or higher
+- pip (Python package manager)
+- gRPC library and protobuf compiler
+
+## Requirements to Run
+
+1. Install dependencies: `pip install -r requirements.txt` (which includes `grpcio` and `grpcio-tools`)
+2. Generate Python stub files from the `.proto` file using `python -m grpc_tools.protoc`
+3. Run the server: `python server.py`
+4. In another terminal, run the client: `python client.py`
+
+## Implementation
+
+```server.py
+from concurrent import futures
+import logging
+
+import grpc
+import helloworld_pb2
+import helloworld_pb2_grpc
+
+
+class Greeter(helloworld_pb2_grpc.GreeterServicer):
+
+    def SayHello(self, request, context):
+        return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
+
+
+def serve():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+    server.add_insecure_port('[::]:50051')
+    server.start()
+    server.wait_for_termination()
+
+
+if __name__ == '__main__':
+    logging.basicConfig()
+    serve()
+```
+
+```client.py
+from __future__ import print_function
+
+import logging
+
+import grpc
+import helloworld_pb2
+import helloworld_pb2_grpc
+
+
+def run():
+    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
+    # used in circumstances in which the with statement does not fit the needs
+    # of the code.
+    with grpc.insecure_channel('localhost:50051') as channel:
+        stub = helloworld_pb2_grpc.GreeterStub(channel)
+        response = stub.SayHello(helloworld_pb2.HelloRequest(name='you'))
+    print("Greeter client received: " + response.message)
+
+
+if __name__ == '__main__':
+    logging.basicConfig()
+    run()
+```
