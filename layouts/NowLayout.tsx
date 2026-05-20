@@ -24,7 +24,7 @@ export default function NowLayout({ children, frontMatter }: Props) {
             ?{' '}
           </h1>
           <div className="text-center text-2xl font-bold ">
-            Last updated <h3 className="inline-block text-violet-500">16th October, 2023</h3>
+            Last updated <h3 className="inline-block text-violet-500">5th May 2026</h3>
           </div>
         </div>
         <div className="items-start space-y-10 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">

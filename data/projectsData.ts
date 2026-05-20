@@ -1,5 +1,23 @@
 const projectsData = [
   {
+    title: 'Resume Compact',
+    description:
+      'Resume Compact, the HR Resume Analyzer, is an intelligent, end-to-end recruitment automation platform designed to streamline candidate screening and evaluation by combining modern document processing, artificial intelligence, and web technologies to eliminate manual resume review',
+    imgSrc: '/static/images/projects/resumecompact.jpg',
+    href: 'https://github.com/nivethsaran/amd-hackathon-resume-compact',
+    demo: 'https://lablab.ai/ai-hackathons/amd-developer/injiandkattan/resume-compact',
+    tags: ['vLLM', 'Python', 'Flask', 'Streamlit', 'AI'],
+  },
+  {
+    title: 'Screensorts',
+    description:
+      'Your second brain for screenshots. Search every pixel, text, and detail instantly and privately on your device.',
+    imgSrc: '/static/images/projects/screensorts.png',
+    href: 'https://screensorts.app/',
+    demo: '',
+    tags: ['Swift', 'CoreML', 'AI', 'SaaS'],
+  },
+  {
     title: 'ShareBear',
     description:
       'Flask Application used to quickly execute and share Java, Python and C++ Code and share them with a QR Code or a Link',

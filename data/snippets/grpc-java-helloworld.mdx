@@ -1,0 +1,194 @@
+---
+title: gRPC Java HelloWorld
+date: '2023-06-15'
+tags: [Java, gRPC, RPC]
+draft: false
+summary: A simple implementation of gRPC server and client in Java with HelloWorld example
+images: []
+layout: PostSimple
+---
+
+## Overview
+
+gRPC is a modern RPC framework built on HTTP/2 that enables high-performance communication between services. This example demonstrates a simple client-server HelloWorld application where the server listens for incoming requests and responds with a greeting.
+
+## What's Happening
+
+**GrpcServer**: Starts a gRPC server on port 50051, implements a `GreeterServicer` that handles the `SayHello` RPC call, and adds a shutdown hook to gracefully close the server.
+
+**GrpcClient**: Connects to the gRPC server using a managed channel, calls the `SayHello` method with a name parameter, and receives the greeting response.
+
+## Prerequisites
+
+- Java 8 or higher
+- Maven or Gradle for dependency management
+- gRPC libraries (io.grpc:grpc-netty-shaded, io.grpc:grpc-protobuf, io.grpc:grpc-stub)
+
+## Requirements to Run
+
+1. Generate the gRPC stub files from the `.proto` file using `protoc`
+2. Add the generated `helloworld_pb2` and `helloworld_pb2_grpc` files to your project
+3. Compile both Java files
+4. Run the server first: `java GrpcServer`
+5. In another terminal, run the client: `java GrpcClient`
+
+## Implementation
+
+```GrpcServer.java
+package dev.niveth.grpc;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
+
+public class GrpcServer {
+
+    private static final Logger logger = Logger.getLogger(GrpcServer.class.getName());
+
+    private Server server;
+
+    private void start() throws IOException {
+        int port = 50051;
+        server = ServerBuilder.forPort(port)
+                .addService(new GreeterImpl())
+                .build()
+                .start();
+        logger.info("Server started on PORT:" + port);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(){
+            @Override
+            public void run()
+            {
+                System.err.println("*** shutting down gRPC server since JVM is shutting down");
+                try {
+                    GrpcServer.this.stop();
+                } catch (InterruptedException e) {
+                    e.printStackTrace(System.err);
+                }
+                System.err.println("*** server shut down");
+            }
+        });
+
+    }
+
+    private void stop() throws InterruptedException {
+        if (server != null) {
+            server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
+        }
+    }
+
+    /**
+     * Await termination on the main thread since the grpc library uses daemon threads.
+     */
+    private void blockUntilShutdown() throws InterruptedException {
+        if (server != null) {
+            server.awaitTermination();
+        }
+    }
+
+    /**
+     * Main launches the server from the command line.
+     */
+    public static void main(String[] args) throws IOException, InterruptedException {
+        final GrpcServer server = new GrpcServer();
+        server.start();
+        server.blockUntilShutdown();
+    }
+
+    static class GreeterImpl extends GreeterGrpc.GreeterImplBase {
+
+        @Override
+        public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+            HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
+            logger.info("Vamos");
+            responseObserver.onNext(reply);
+            responseObserver.onCompleted();
+        }
+    }
+
+}
+```
+
+```GrpcClient.java
+package dev.niveth.grpc;
+
+import io.grpc.Channel;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
+
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class GrpcClient {
+
+    private static final Logger logger = Logger.getLogger(GrpcClient.class.getName());
+
+    private final GreeterGrpc.GreeterBlockingStub blockingStub;
+
+    /** Construct client for accessing HelloWorld server using the existing channel. */
+    public GrpcClient(Channel channel) {
+        // 'channel' here is a Channel, not a ManagedChannel, so it is not this code's responsibility to
+        // shut it down.
+
+        // Passing Channels to code makes code easier to test and makes it easier to reuse Channels.
+        blockingStub = GreeterGrpc.newBlockingStub(channel);
+    }
+
+    public void greet(String name) {
+        logger.info("Will try to greet " + name + " ...");
+        HelloRequest request = HelloRequest.newBuilder().setName(name).build();
+        HelloReply response;
+        try {
+            response = blockingStub.sayHello(request);
+        } catch (StatusRuntimeException e) {
+            logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+            return;
+        }
+        logger.info("Greeting: " + response.getMessage());
+    }
+
+    public static void main(String[] args) throws Exception {
+        String user = "world";
+        // Access a service running on the local machine on port 50051
+        String target = "localhost:50051";
+        // Allow passing in the user and target strings as command line arguments
+        if (args.length > 0) {
+            if ("--help".equals(args[0])) {
+                System.err.println("Usage: [name [target]]");
+                System.err.println("");
+                System.err.println("  name    The name you wish to be greeted by. Defaults to " + user);
+                System.err.println("  target  The server to connect to. Defaults to " + target);
+                System.exit(1);
+            }
+            user = args[0];
+        }
+        if (args.length > 1) {
+            target = args[1];
+        }
+
+        // Create a communication channel to the server, known as a Channel. Channels are thread-safe
+        // and reusable. It is common to create channels at the beginning of your application and reuse
+        // them until the application shuts down.
+        ManagedChannel channel = ManagedChannelBuilder.forTarget(target)
+                // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
+                // needing certificates.
+                .usePlaintext()
+                .build();
+        try {
+            GrpcClient client = new GrpcClient(channel);
+            client.greet(user);
+        } finally {
+            // ManagedChannels use resources like threads and TCP connections. To prevent leaking these
+            // resources the channel should be shut down when it will no longer be used. If it may be used
+            // again leave it running.
+            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+        }
+    }
+}
+```
