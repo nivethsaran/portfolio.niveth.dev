@@ -88,21 +88,6 @@ module.exports = withBundleAnalyzer({
       use: ['@svgr/webpack'],
     })
 
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        'react/jsx-runtime': 'preact/compat/jsx-runtime',
-        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        'react/jsx-dev-runtime': 'preact/compat/jsx-dev-runtime',
-        'react/jsx-dev-runtime.js': 'preact/compat/jsx-dev-runtime',
-        'preact/compat/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        'preact/compat/jsx-dev-runtime.js': 'preact/compat/jsx-dev-runtime',
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-
     return config
   },
 })
