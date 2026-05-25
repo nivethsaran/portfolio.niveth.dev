@@ -9,6 +9,7 @@ const generateRssItem = (post: PostFrontMatter & { section?: 'blog' | 'snippets'
   <item>
     <guid>${siteMetadata.siteUrl}/${itemPath}</guid>
     <title>${escape(post.title)}</title>
+    <itemType>${post.section}</itemType>
     <link>${siteMetadata.siteUrl}/${itemPath}</link>
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
@@ -27,7 +28,6 @@ const generateRss = (
     <channel>
       <title>${escape(siteMetadata.title)}</title>
       <link>${channelLink}</link>
-      <pageType>${posts[0].section}</pageType>
       <description>${escape(siteMetadata.description)}</description>
       <language>${siteMetadata.language}</language>
       <managingEditor>${siteMetadata.email} (${siteMetadata.author})</managingEditor>
