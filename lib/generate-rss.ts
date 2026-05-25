@@ -27,6 +27,7 @@ const generateRss = (
     <channel>
       <title>${escape(siteMetadata.title)}</title>
       <link>${channelLink}</link>
+      <pageType>${posts[0].section}</pageType>
       <description>${escape(siteMetadata.description)}</description>
       <language>${siteMetadata.language}</language>
       <managingEditor>${siteMetadata.email} (${siteMetadata.author})</managingEditor>
