@@ -31,7 +31,7 @@ export default function Footer() {
             </Link>
             <div>{` • `}</div>
             <Link
-              href="https://github.com/nivethsaran/nivethsaran.github.io"
+              href="https://github.com/nivethsaran/portfolio.niveth.dev"
               className="hover:text-primary-500 hover:underline hover:underline-offset-4"
             >
               Source Code
