@@ -1,6 +1,15 @@
 import Link from '@/components/Link'
 
-const Experience = ({ title, company, location, range, url, text1, text2 }) => {
+type ExperienceProps = {
+  title: string
+  company: string
+  location: string
+  range: string
+  url: string
+  bullets: string[]
+}
+
+const Experience = ({ title, company, location, range, url, bullets }: ExperienceProps) => {
   return (
     <div className="my-3">
       <div className="flex flex-row text-xl">
@@ -15,27 +24,14 @@ const Experience = ({ title, company, location, range, url, text1, text2 }) => {
       <div>
         <div className="p-1 font-mono text-sm text-gray-400 dark:text-gray-600">{range}</div>
         <div className="p-2">
-          <div className="flex flex-row ">
-            <div className="text-primary-color-500 dark:text-primary-color-dark-500 mr-2 text-lg">
-              {' '}
-              &#8227;
+          {bullets.map((bullet, index) => (
+            <div key={index} className="flex items-start gap-2 mb-2">
+              <div className="text-primary-color-500 dark:text-primary-color-dark-500 text-lg leading-none">
+                &#8227;
+              </div>
+              <div className="text-gray-500 dark:text-gray-400">{bullet}</div>
             </div>
-            <div className="text-gray-500 dark:text-gray-400">{text1}</div>
-          </div>
-          <div className="flex flex-row">
-            <div className="text-primary-color-500 dark:text-primary-color-dark-500 mr-2 text-lg">
-              {' '}
-              &#8227;
-            </div>
-            <div className="text-gray-500 dark:text-gray-400">{text2}</div>
-          </div>
-          {/* <div className="items-top flex flex-row">
-            <div className="text-primary-color-500 dark:text-primary-color-dark-500 mr-2 text-lg">
-              {' '}
-              &#8227;
-            </div>
-            <div className="text-gray-500 dark:text-gray-400">{text3}</div>
-          </div> */}
+          ))}
         </div>
       </div>
       <div className="justify-center text-center text-2xl font-medium text-gray-200  dark:text-gray-600">

@@ -15,16 +15,14 @@ const Education = ({ title, company, location, range, url, text1, text2 }) => {
       <div>
         <div className="p-1 font-mono text-sm text-gray-400 dark:text-gray-600">{range}</div>
         <div className="p-2">
-          <div className="flex flex-row ">
-            <div className="text-primary-color-500 dark:text-primary-color-dark-500 mr-2 text-lg">
-              {' '}
+          <div className="flex items-start gap-2 mb-2">
+            <div className="text-primary-color-500 dark:text-primary-color-dark-500 text-lg leading-none">
               &#8227;
             </div>
             <div className="text-gray-500 dark:text-gray-400">{text1}</div>
           </div>
-          <div className="flex flex-row">
-            <div className="text-primary-color-500 dark:text-primary-color-dark-500 mr-2 text-lg">
-              {' '}
+          <div className="flex items-start gap-2">
+            <div className="text-primary-color-500 dark:text-primary-color-dark-500 text-lg leading-none">
               &#8227;
             </div>
             <div className="text-gray-500 dark:text-gray-400">{text2}</div>

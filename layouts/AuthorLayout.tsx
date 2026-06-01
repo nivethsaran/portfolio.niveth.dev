@@ -67,8 +67,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                 location={d.location}
                 range={d.range}
                 url={d.url}
-                text1={d.text1}
-                text2={d.text2}
+                bullets={d.bullets}
               />
             ))}
           </div>
