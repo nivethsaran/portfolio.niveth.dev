@@ -13,9 +13,11 @@ const Education = ({ title, company, location, range, url, text1, text2 }) => {
         </span>
       </div>
       <div>
-        <div className="p-1 font-mono text-sm text-gray-400 dark:text-gray-600">{range}</div>
+        <div className="p-1 font-mono text-sm text-gray-400 dark:text-gray-600">
+          {range} · {location}
+        </div>
         <div className="p-2">
-          <div className="flex items-start gap-2 mb-2">
+          <div className="mb-2 flex items-start gap-2">
             <div className="text-primary-color-500 dark:text-primary-color-dark-500 text-lg leading-none">
               &#8227;
             </div>
