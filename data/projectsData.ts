@@ -14,8 +14,16 @@ const projectsData = [
       'Your second brain for screenshots. Search every pixel, text, and detail instantly and privately on your device.',
     imgSrc: '/static/images/projects/screensorts.png',
     href: 'https://screensorts.app/',
-    demo: '',
+    demo: 'https://screensorts.app/purchase?plan=yearly',
     tags: ['Swift', 'CoreML', 'AI', 'SaaS'],
+  },{
+    title: 'Jatayu Criminal Tagging',
+    description:
+      'Award-winning Android application for real-time criminal identification and tracking using facial recognition, computer vision, and GPS technologies, securing 3rd Prize at the Smart India Hackathon.',
+    imgSrc: '/static/images/projects/jatayu.jpeg',
+    href: 'https://github.com/nivethsaran/criminal-tagging-system',
+    demo: 'https://www.amrita.edu/news/amrita-student-team-ranked-3rd-smart-india-hackathon-sih-2020/',
+    tags: ['Android', 'Java'],
   },
   {
     title: 'ShareBear',
