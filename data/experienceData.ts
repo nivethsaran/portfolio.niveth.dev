@@ -6,8 +6,9 @@ const experienceData = [
     range: 'Nov 2023 - Present',
     url: 'https://www.cisco.com/',
     bullets: [
-      "In this role, I have assumed responsibility for managing a portfolio of applications within Cisco's usage framework",
-      "Our team's current focus is on developing a new provisioning system to support all of Cisco's SaaS offerings.",
+      "Designed and developed an application to report Remaining Performance Obligations (RPO) across Cisco’s active subscriptions, achieving 99.99% accuracy for Wall Street financial reporting",
+      "Designed and developed a scalable, low-latency Usage Reporting API using Java, Spring Boot, Kafka, and MongoDB (<3ms response time) for Cisco B2B partners to invoice end customers, handling 1 million requests per hour.",
+      "Consolidated distributed data workflow orchestration onto Apache Airflow, replacing multiple commercial platforms and reducing operational complexity and licensing costs.",
     ],
   },
   {
@@ -17,8 +18,8 @@ const experienceData = [
     range: 'July 2023 - Present',
     url: 'https://www.cisco.com/',
     bullets: [
-      'I took on an additional role as a Partner Security Advocate within the Subscription Management Team',
-      ' In this capacity, I implemented continuous application scanning processes to maintain high code quality and identify and mitigate critical vulnerabilities.',
+      'Assumed the additional role of Partner Security Advocate, driving vulnerability remediation efforts and achieving a 100% YTD closure rate for the team’s security findings.',
+      'Implemented continuous application security scanning and monitoring processes, enabling early detection and remediation of vulnerabilities throughout the development lifecycle.',
     ],
   },
   {
@@ -29,7 +30,7 @@ const experienceData = [
     url: 'https://www.cisco.com/',
     bullets: [
       'I assumed an additional role as a Scrum Lead as part of a team rebalancing initiative',
-      'I handled the scrum responsibilities of a ring fenced scrum team under the Finance IT Organization',
+      'Led Scrum ceremonies for a ring fenced scrum team during organizational restructuring, ensuring uninterrupted delivery across multiple workstreams.'
     ],
   },
   {
@@ -39,8 +40,8 @@ const experienceData = [
     range: 'Nov 2022 - Oct 2023',
     url: 'https://www.cisco.com/',
     bullets: [
-      'I was assigned the task of redesigning a backend API including its data model to minimize failures during data processing and improving fallback and monitoring mechanisms',
-      'I built a tool which helped migrate all app secrets to a new secret management portal which integrated with the kubernetes deployment environment',
+      'Migrated Cisco SaaS product provisioning application to a microservices architecture, enhancing scalability and supporting 99.99% service availability.',
+      'Mentored Interns and guided a Junior SDE to onboard into team’s technical processes.',
     ],
   },
   {
@@ -50,8 +51,8 @@ const experienceData = [
     range: 'Aug 2021 - Oct 2022',
     url: 'https://www.cisco.com/',
     bullets: [
-      "As a Software Engineer at Cisco's Subscription Management team, I was an integral part of a dynamic, cross-functional team that collaborated to build the Cisco CX Cloud. This project required a blend of technical expertise, teamwork, and innovation to create a versatile and cutting-edge cloud platform.",
-      'I contributed to another significant project that involved ensuring market access to the different countries by enabling our apps to adhere to the GDPR Compliance',
+      'Designed and developed an event-driven, distributed GDPR-compliant SaaS usage tracking framework for Cisco products, including automated data migration pipelines for legacy systems.',
+      'Developed a fault-tolerant CyberArk Conjur–OpenShift secret synchronizer for automated secret management.',
     ],
   },
   {
@@ -61,8 +62,8 @@ const experienceData = [
     range: 'Jan 2021 - Aug 2021',
     url: 'https://www.cisco.com/',
     bullets: [
-      'During my internship at Cisco, I played a key role in enhancing support activities. I developed a specialized bot that significantly accelerated the resolution process, improving efficiency and customer satisfaction.', //TODO Edit this
-      "Additionally, I made substantial contributions to an essential API project responsible for reporting Cisco's invoice and usage data.",
+      'Optimized an internal Webex support bot used by engineering and support teams, improving workflow automation and reducing issue resolution time.',
+      "Built a B2B API platform for Cisco’s partners, streamlining invoice workflows and reducing payment turnaround time by 2 weeks.",
     ],
   },
   {
@@ -72,8 +73,8 @@ const experienceData = [
     range: 'Oct 2018 - Feb 2019',
     url: 'https://anokha.amrita.edu',
     bullets: [
-      'Anokha, the national techfest of Amrita Vishwa Vidyapeetham Coimbatore, is a 3-day congregation of some of the brightest minds in India.',
-      'I contributed in the development of mobile application for Anokha Techfest',
+      'Contributed to the development of the official mobile application for Anokha, the national tech fest of Amrita Vishwa Vidyapeetham.',
+      'Helped deliver a seamless digital experience for attendees through event information, schedules, and quick payment options.',
     ],
   },
   {
@@ -83,8 +84,8 @@ const experienceData = [
     range: 'May 2018',
     url: 'http://themango.co',
     bullets: [
-      `Mango Education seeks to nurture and grow the leaders of tomorrow who are problem solvers, researchers and innovators, in an integrated approach that involves activity based, experiential and interdisciplinary learning.`,
-      'I helped conduct a App Development workshop for students of ages 11-14. Our team helped the students understand the basic concepts of app development and provide them a hands-on session with tools like MIT App Inventor, Sketchware etc.',
+      `Assisted in conducting an App Development workshop at Mango Education, an organization focused on fostering innovation, problem-solving, and experiential learning among school students.`,
+      'Introduced fundamental app development concepts and guided students aged 11–14 through hands-on projects using MIT App Inventor and Sketchware.',
     ],
   },
 ]
