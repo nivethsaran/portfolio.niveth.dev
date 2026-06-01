@@ -45,8 +45,9 @@ export const getStaticProps: GetStaticProps<{
 
   // rss
   if (allPosts.length > 0) {
-    const rss = generateRss(allPosts)
-    fs.writeFileSync('./public/feed.xml', rss)
+    const rss = generateRss(allPosts, 'snippets/feed.xml')
+    fs.mkdirSync('./public/snippets', { recursive: true })
+    fs.writeFileSync('./public/snippets/feed.xml', rss)
   }
 
   return {

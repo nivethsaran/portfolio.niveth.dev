@@ -5,10 +5,11 @@ const experienceData = [
     location: 'Bengaluru, Karnataka, India',
     range: 'Nov 2023 - Present',
     url: 'https://www.cisco.com/',
-    text1:
-      "In this role, I have assumed responsibility for managing a portfolio of applications within Cisco's usage framework",
-    text2:
-      "Our team's current focus is on developing a new provisioning system to support all of Cisco's SaaS offerings.",
+    bullets: [
+      "Designed and developed an application to report Remaining Performance Obligations (RPO) across Cisco’s active subscriptions, achieving 99.99% accuracy for Wall Street financial reporting",
+      "Designed and developed a scalable, low-latency Usage Reporting API using Java, Spring Boot, Kafka, and MongoDB (<3ms response time) for Cisco B2B partners to invoice end customers, handling 1 million requests per hour.",
+      "Consolidated distributed data workflow orchestration onto Apache Airflow, replacing multiple commercial platforms and reducing operational complexity and licensing costs.",
+    ],
   },
   {
     title: 'Partner Security Advocate (Additional Role)',
@@ -16,10 +17,10 @@ const experienceData = [
     location: 'Bengaluru, Karnataka, India',
     range: 'July 2023 - Present',
     url: 'https://www.cisco.com/',
-    text1:
-      'I took on an additional role as a Partner Security Advocate within the Subscription Management Team',
-    text2:
-      ' In this capacity, I implemented continuous application scanning processes to maintain high code quality and identify and mitigate critical vulnerabilities.',
+    bullets: [
+      'Assumed the additional role of Partner Security Advocate, driving vulnerability remediation efforts and achieving a 100% YTD closure rate for the team’s security findings.',
+      'Implemented continuous application security scanning and monitoring processes, enabling early detection and remediation of vulnerabilities throughout the development lifecycle.',
+    ],
   },
   {
     title: 'Scrum Lead (Additional Role)',
@@ -27,9 +28,10 @@ const experienceData = [
     location: 'Coimbatore, TamilNadu, India (Remote)',
     range: 'Dec 2022 - June 2023',
     url: 'https://www.cisco.com/',
-    text1: 'I assumed an additional role as a Scrum Lead as part of a team rebalancing initiative',
-    text2:
-      'I handled the scrum responsibilities of a ring fenced scrum team under the Finance IT Organization',
+    bullets: [
+      'I assumed an additional role as a Scrum Lead as part of a team rebalancing initiative',
+      'Led Scrum ceremonies for a ring fenced scrum team during organizational restructuring, ensuring uninterrupted delivery across multiple workstreams.'
+    ],
   },
   {
     title: 'Software Engineer II',
@@ -37,10 +39,10 @@ const experienceData = [
     location: 'Bengaluru, Karnataka, India',
     range: 'Nov 2022 - Oct 2023',
     url: 'https://www.cisco.com/',
-    text1:
-      'I was assigned the task of redesigning a backend API including its data model to minimize failures during data processing and improving fallback and monitoring mechanisms',
-    text2:
-      'I built a tool which helped migrate all app secrets to a new secret management portal which integrated with the kubernetes deployment environment',
+    bullets: [
+      'Migrated Cisco SaaS product provisioning application to a microservices architecture, enhancing scalability and supporting 99.99% service availability.',
+      'Mentored Interns and guided a Junior SDE to onboard into team’s technical processes.',
+    ],
   },
   {
     title: 'Software Engineer',
@@ -48,10 +50,10 @@ const experienceData = [
     location: 'Bengaluru, Karnataka, India',
     range: 'Aug 2021 - Oct 2022',
     url: 'https://www.cisco.com/',
-    text1:
-      "As a Software Engineer at Cisco's Subscription Management team, I was an integral part of a dynamic, cross-functional team that collaborated to build the Cisco CX Cloud. This project required a blend of technical expertise, teamwork, and innovation to create a versatile and cutting-edge cloud platform.",
-    text2:
-      'I contributed to another significant project that involved ensuring market access to the different countries by enabling our apps to adhere to the GDPR Compliance',
+    bullets: [
+      'Designed and developed an event-driven, distributed GDPR-compliant SaaS usage tracking framework for Cisco products, including automated data migration pipelines for legacy systems.',
+      'Developed a fault-tolerant CyberArk Conjur–OpenShift secret synchronizer for automated secret management.',
+    ],
   },
   {
     title: 'Technical Undergraduate Intern',
@@ -59,10 +61,10 @@ const experienceData = [
     location: 'Coimbatore, TamilNadu, India (Remote)',
     range: 'Jan 2021 - Aug 2021',
     url: 'https://www.cisco.com/',
-    text1:
-      'During my internship at Cisco, I played a key role in enhancing support activities. I developed a specialized bot that significantly accelerated the resolution process, improving efficiency and customer satisfaction.', //TODO Edit this
-    text2:
-      "Additionally, I made substantial contributions to an essential API project responsible for reporting Cisco's invoice and usage data.",
+    bullets: [
+      'Optimized an internal Webex support bot used by engineering and support teams, improving workflow automation and reducing issue resolution time.',
+      "Built a B2B API platform for Cisco’s partners, streamlining invoice workflows and reducing payment turnaround time by 2 weeks.",
+    ],
   },
   {
     title: 'Android App Developer',
@@ -70,9 +72,10 @@ const experienceData = [
     location: 'Coimbatore, TamilNadu, India',
     range: 'Oct 2018 - Feb 2019',
     url: 'https://anokha.amrita.edu',
-    text1:
-      'Anokha, the national techfest of Amrita Vishwa Vidyapeetham Coimbatore, is a 3-day congregation of some of the brightest minds in India.',
-    text2: 'I contributed in the development of mobile application for Anokha Techfest',
+    bullets: [
+      'Contributed to the development of the official mobile application for Anokha, the national tech fest of Amrita Vishwa Vidyapeetham.',
+      'Helped deliver a seamless digital experience for attendees through event information, schedules, and quick payment options.',
+    ],
   },
   {
     title: 'Android App Dev Mentor',
@@ -80,9 +83,10 @@ const experienceData = [
     location: 'Coimbatore, TamilNadu, India',
     range: 'May 2018',
     url: 'http://themango.co',
-    text1: `Mango Education seeks to nurture and grow the leaders of tomorrow who are problem solvers, researchers and innovators, in an integrated approach that involves activity based, experiential and interdisciplinary learning.`,
-    text2:
-      'I helped conduct a App Development workshop for students of ages 11-14. Our team helped the students understand the basic concepts of app development and provide them a hands-on session with tools like MIT App Inventor, Sketchware etc.',
+    bullets: [
+      `Assisted in conducting an App Development workshop at Mango Education, an organization focused on fostering innovation, problem-solving, and experiential learning among school students.`,
+      'Introduced fundamental app development concepts and guided students aged 11–14 through hands-on projects using MIT App Inventor and Sketchware.',
+    ],
   },
 ]
 

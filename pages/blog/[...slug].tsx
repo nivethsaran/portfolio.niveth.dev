@@ -1,8 +1,9 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
+import siteMetadata from '@/data/siteMetadata'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { PostFrontMatter } from 'types/PostFrontMatter'
@@ -30,10 +31,15 @@ export const getStaticProps: GetStaticProps<{
   next?: { slug: string; title: string }
 }> = async ({ params }) => {
   const slug = (params.slug as string[]).join('/')
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slug)
-  const prev: { slug: string; title: string } = allPosts[postIndex + 1] || null
-  const next: { slug: string; title: string } = allPosts[postIndex - 1] || null
+  const blogPosts = await getAllFilesFrontMatter('blog')
+  const snippetPosts = await getAllFilesFrontMatter('snippets')
+  const allPosts = [
+    ...blogPosts.map((post) => ({ ...post, section: 'blog' as const })),
+    ...snippetPosts.map((post) => ({ ...post, section: 'snippets' as const })),
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const postIndex = blogPosts.findIndex((post) => formatSlug(post.slug) === slug)
+  const prev: { slug: string; title: string } = blogPosts[postIndex + 1] || null
+  const next: { slug: string; title: string } = blogPosts[postIndex - 1] || null
   const post = await getFileBySlug<PostFrontMatter>('blog', slug)
   // @ts-ignore
   const authorList = post.frontMatter.authors || ['default']
@@ -45,7 +51,7 @@ export const getStaticProps: GetStaticProps<{
 
   // rss
   if (allPosts.length > 0) {
-    const rss = generateRss(allPosts)
+    const rss = generateRss(allPosts, 'feed.xml', siteMetadata.siteUrl)
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
@@ -64,7 +70,7 @@ export default function Blog({
   authorDetails,
   prev,
   next,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: Readonly<InferGetStaticPropsType<typeof getStaticProps>>) {
   const { mdxSource, toc, frontMatter } = post
 
   return (
