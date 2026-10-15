@@ -1,5 +1,23 @@
 const projectsData = [
   {
+    title: 'Flowmint',
+    description:
+      'A local-first personal finance command center that turns bank messages into structured transactions, with spending analytics, budgets, recurring payments, and an inbox for review.',
+    imgSrc: '/static/images/projects/flowmint.svg',
+    href: 'https://github.com/nivethsaran/flowmint',
+    demo: '',
+    tags: ['Java', 'Spring Boot', 'Next.js', 'PostgreSQL', 'AI'],
+  },
+  {
+    title: 'Iris',
+    description:
+      'An Android app that securely forwards incoming SMS messages and selected app notifications to configurable HTTP webhooks, with reliable background delivery and retries.',
+    imgSrc: '/static/images/projects/iris.svg',
+    href: 'https://github.com/nivethsaran/Iris',
+    demo: '',
+    tags: ['Kotlin', 'Android', 'WorkManager', 'Webhooks'],
+  },
+  {
     title: 'Resume Compact',
     description:
       'Resume Compact, the HR Resume Analyzer, is an intelligent, end-to-end recruitment automation platform designed to streamline candidate screening and evaluation by combining modern document processing, artificial intelligence, and web technologies to eliminate manual resume review',
@@ -16,7 +34,8 @@ const projectsData = [
     href: 'https://screensorts.app/',
     demo: 'https://screensorts.app/purchase?plan=yearly',
     tags: ['Swift', 'CoreML', 'AI', 'SaaS'],
-  },{
+  },
+  {
     title: 'Jatayu Criminal Tagging',
     description:
       'Award-winning Android application for real-time criminal identification and tracking using facial recognition, computer vision, and GPS technologies, securing 3rd Prize at the Smart India Hackathon.',
