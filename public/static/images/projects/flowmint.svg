@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1088" height="612" viewBox="0 0 1088 612" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="88" y1="38" x2="1008" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3F8ED"/>
+      <stop offset=".55" stop-color="#C5EBDD"/>
+      <stop offset="1" stop-color="#A6D8C7"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="257" y1="82" x2="803" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#142D29"/>
+      <stop offset="1" stop-color="#0C211F"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="390" y1="156" x2="715" y2="477" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9BF4C1"/>
+      <stop offset="1" stop-color="#42C98B"/>
+    </linearGradient>
+    <filter id="shadow" x="124" y="31" width="844" height="586" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="22"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 .09 0 0 0 0 .22 0 0 0 0 .17 0 0 0 .22 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#fff" stroke-opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="1088" height="612" fill="url(#bg)"/>
+  <circle cx="125" cy="97" r="115" fill="#fff" fill-opacity=".2"/>
+  <circle cx="1010" cy="514" r="163" fill="#75C9A6" fill-opacity=".18"/>
+  <path d="M0 486c150-70 234-16 362 30 154 55 253-4 373-64 137-69 225-43 353 4v156H0V486Z" fill="#85CCAE" fill-opacity=".22"/>
+  <g filter="url(#shadow)">
+    <rect x="178" y="78" width="732" height="456" rx="25" fill="url(#panel)"/>
+    <rect x="178.75" y="78.75" width="730.5" height="454.5" rx="24.25" stroke="#fff" stroke-opacity=".16" stroke-width="1.5"/>
+    <path d="M203 78h682a25 25 0 0 1 25 25v35H178v-35a25 25 0 0 1 25-25Z" fill="#fff" fill-opacity=".035"/>
+    <circle cx="207" cy="105" r="5" fill="#F28F8F"/>
+    <circle cx="226" cy="105" r="5" fill="#F0C36F"/>
+    <circle cx="245" cy="105" r="5" fill="#70D6A0"/>
+    <path d="M276 105h66" stroke="#D5EEE2" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"/>
+    <rect x="225" y="168" width="38" height="38" rx="12" fill="url(#mint)"/>
+    <path d="M237 188c0-6.627 5.373-12 12-12h4v7h-4a5 5 0 1 0 0 10h4v7h-4c-6.627 0-12-5.373-12-12Z" fill="#12352B"/>
+    <path d="M246 183h10v7h-10z" fill="#12352B"/>
+    <text x="274" y="188" fill="#EFFAF3" font-family="Arial,sans-serif" font-size="18" font-weight="700">flowmint</text>
+    <text x="225" y="251" fill="#9FBAB0" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.5">TOTAL BALANCE</text>
+    <text x="225" y="296" fill="#F4FFF8" font-family="Arial,sans-serif" font-size="38" font-weight="700">₹ 84,250</text>
+    <rect x="225" y="316" width="112" height="28" rx="14" fill="#54D392" fill-opacity=".15"/>
+    <path d="m241 330 5 5 9-10" stroke="#82E5AC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="262" y="335" fill="#A3EBC0" font-family="Arial,sans-serif" font-size="12">on track this month</text>
+    <rect x="225" y="378" width="344" height="119" rx="15" fill="#fff" fill-opacity=".045"/>
+    <text x="246" y="405" fill="#A9C1B7" font-family="Arial,sans-serif" font-size="12">CASH FLOW</text>
+    <path d="M247 466c23-4 30-30 51-26s28 19 47 5c20-15 23-30 44-21s26 18 45 6 26-37 46-27 26 9 42-3 26-8 42-19" stroke="url(#mint)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M247 475h305" stroke="#E4F7EC" stroke-opacity=".12"/>
+    <circle cx="522" cy="381" r="47" fill="#A3F1C4" fill-opacity=".08"/>
+    <circle cx="522" cy="381" r="30" fill="#A3F1C4" fill-opacity=".13"/>
+    <path d="M518 363v36m11-28c-2-3-5-4-9-4-6 0-10 3-10 8 0 12 20 5 20 17 0 5-4 9-11 9-4 0-8-2-10-5" stroke="#A5F2C3" stroke-width="3" stroke-linecap="round"/>
+    <rect x="601" y="168" width="274" height="329" rx="17" fill="#F5FBF7"/>
+    <text x="625" y="201" fill="#233D32" font-family="Arial,sans-serif" font-size="15" font-weight="700">Recent activity</text>
+    <text x="625" y="224" fill="#91A69B" font-family="Arial,sans-serif" font-size="11">Your transactions, organized</text>
+    <path d="M625 244h226" stroke="#E5EEE8"/>
+    <circle cx="644" cy="272" r="15" fill="#E5F7EC"/>
+    <path d="M640 272h8m-4-4v8" stroke="#39A86B" stroke-width="2" stroke-linecap="round"/>
+    <text x="669" y="269" fill="#344B40" font-family="Arial,sans-serif" font-size="12" font-weight="700">Salary credited</text>
+    <text x="669" y="286" fill="#96A69D" font-family="Arial,sans-serif" font-size="10">Today · HDFC Bank</text>
+    <text x="829" y="278" text-anchor="end" fill="#278454" font-family="Arial,sans-serif" font-size="12" font-weight="700">+₹65,000</text>
+    <path d="M625 303h226" stroke="#E5EEE8"/>
+    <circle cx="644" cy="331" r="15" fill="#FBECE8"/>
+    <path d="M639 331h10m-5-5v10" stroke="#D7755D" stroke-width="2" stroke-linecap="round"/>
+    <text x="669" y="328" fill="#344B40" font-family="Arial,sans-serif" font-size="12" font-weight="700">Grocery store</text>
+    <text x="669" y="345" fill="#96A69D" font-family="Arial,sans-serif" font-size="10">Yesterday · Card</text>
+    <text x="829" y="337" text-anchor="end" fill="#364B40" font-family="Arial,sans-serif" font-size="12" font-weight="700">−₹2,450</text>
+    <path d="M625 359h226" stroke="#E5EEE8"/>
+    <circle cx="644" cy="387" r="15" fill="#EDF0FE"/>
+    <path d="M638 387h12m-4-4 4 4-4 4" stroke="#6975C5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="669" y="384" fill="#344B40" font-family="Arial,sans-serif" font-size="12" font-weight="700">Monthly transfer</text>
+    <text x="669" y="401" fill="#96A69D" font-family="Arial,sans-serif" font-size="10">Oct 12 · Savings</text>
+    <text x="829" y="393" text-anchor="end" fill="#364B40" font-family="Arial,sans-serif" font-size="12" font-weight="700">−₹8,000</text>
+    <rect x="625" y="432" width="226" height="43" rx="10" fill="#E8F7EE"/>
+    <circle cx="646" cy="453" r="8" fill="#55C985"/>
+    <path d="m642 453 3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="663" y="457" fill="#35764F" font-family="Arial,sans-serif" font-size="11" font-weight="700">All messages processed</text>
+  </g>
+  <g transform="rotate(-10 137 429)">
+    <rect x="76" y="390" width="126" height="76" rx="16" fill="#F8FFFB" fill-opacity=".93"/>
+    <circle cx="99" cy="414" r="10" fill="#D7F3E3"/>
+    <path d="M95 414h8m-4-4v8" stroke="#35A56A" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M118 409h63M118 423h47M94 444h86" stroke="#4A685A" stroke-opacity=".25" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <rect width="1088" height="612" rx="32" fill="url(#grid)" opacity=".15"/>
+</svg>

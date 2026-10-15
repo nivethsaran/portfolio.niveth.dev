@@ -12,7 +12,7 @@ const Card = ({ title, description, imgSrc, href, demo, tags }) => (
           imgSrc && 'h-full'
         }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
       >
-        {
+        {imgSrc && (
           <Image
             alt={title}
             src={imgSrc}
@@ -20,7 +20,7 @@ const Card = ({ title, description, imgSrc, href, demo, tags }) => (
             width={544}
             height={306}
           />
-        }
+        )}
         <div className="p-6">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-gray-800 dark:text-gray-400">
             {href ? (
